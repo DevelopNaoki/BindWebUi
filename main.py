@@ -15,9 +15,8 @@ if __name__ == '__main__':
     serverConfig = serverConfig()
 
     if 'debug' in serverConfig and (serverConfig['debug'].upper() == "TRUE"):
-      debug = True
+      app.debug = True
     else:
-      debug = False
-    app.debug = debug
+      app.debug = False
 
     app.run(host=serverConfig['listem'],port=serverConfig['port'])
