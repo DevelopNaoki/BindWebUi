@@ -19,4 +19,12 @@ if __name__ == '__main__':
     else:
       app.debug = False
 
-    app.run(host=serverConfig['listem'],port=serverConfig['port'])
+    if 'ssl_certificate' in serverConfig and 'ssl_private_key' in serverConfig:
+      import ssl
+      ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+      ssl_context.load_cert_chain(
+        serverConfig['ssl_certificate'], serverConfig['ssl_private_key']
+      )
+      app.run(host=serverConfig['listem'],port=serverConfig['port'],ssl_context=ssl_context)
+    else:
+      app.run(host=serverConfig['listem'],port=serverConfig['port'])
