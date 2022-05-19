@@ -1,26 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-<head lang="ja">
-  <meta charset="UTF-8">
-  <title>Bind WEB User Interface</title>
-  <!-- Import Css -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-  <header>
-    <h2>Bind WEB User Interface</h2>
-  </header>
+{% extends "template.html" %}
+{% block content %}
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <p class="grey-text text-lighten-3">Copyright @ 2022 All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
-</body>
-</html>
+{% endblock %}

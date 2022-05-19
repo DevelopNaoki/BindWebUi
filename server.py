@@ -1,23 +1,18 @@
 from flask import Flask
-
-app = Flask(__name__)
-
 from router import *
 
-@app.route('/', methods=["GET"])
-def index():
-    return 'Hello main'
+webApp = Flask(__name__)
 
-app.register_blueprint(api)
+webApp.register_blueprint(app)
 
 if __name__ == '__main__':
     from init import serverConfig
     serverConfig = serverConfig()
 
     if 'debug' in serverConfig and (serverConfig['debug'].upper() == "TRUE"):
-      app.debug = True
+      webApp.debug = True
     else:
-      app.debug = False
+      webApp.debug = False
 
     if 'ssl_certificate' in serverConfig and 'ssl_private_key' in serverConfig:
       import ssl
@@ -25,6 +20,6 @@ if __name__ == '__main__':
       sslContext.load_cert_chain(
         serverConfig['ssl_certificate'], serverConfig['ssl_private_key']
       )
-      app.run(host=serverConfig['listem'],port=serverConfig['port'],ssl_context=sslContext)
+      webApp.run(host=serverConfig['listem'],port=serverConfig['port'],ssl_context=sslContext)
     else:
-      app.run(host=serverConfig['listem'],port=serverConfig['port'])
+      webApp.run(host=serverConfig['listem'],port=serverConfig['port'])
