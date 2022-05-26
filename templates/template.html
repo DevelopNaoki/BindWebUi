@@ -13,15 +13,19 @@
 <body>
   <header>
     <ul id="dropdown1" class="dropdown-content">
+{% if session["user"] == "administrator" %}
       <li><a href="#!">Show</a></li>
+{% endif %}
       <li><a href="#!">Issue</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">&nbsp;&nbsp;BIND WEB User Interface</a>
-{% if "userId" in session %}
+        <a href="/" class="brand-logo">&nbsp;&nbsp;Certificate Authority</a>
+{% if "user" in session %}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+{% if session["user"] == "administrator" %}
           <li><a href="/serverConfig">Configure Server</a></li>
+{% endif %}
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Server Certificates<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a href="/api/logout">Logout</a></li>
         </ul>
@@ -33,15 +37,7 @@
     {% block content %}
 
     {% endblock %}
-<!--
-  <footer class="page-footer">
-    <div class="container">
-        <div class="col l6 s12">
-          <p class="grey-text text-lighten-3 center">Copyright @ 2022 All Rights Reserved.</p>
-        </div>
-    </div>
-  </footer>
--->
+  
   <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/language.js') }}"></script>
 </body>

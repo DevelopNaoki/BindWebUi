@@ -4,6 +4,8 @@ from router import *
 webApp = Flask(__name__)
 
 webApp.register_blueprint(app)
+webApp.secret_key = 'thisiscertificateauthority'
+webApp.permanent_session_lifetime = timedelta(minutes=3)
 
 if __name__ == '__main__':
     from init import serverConfig
