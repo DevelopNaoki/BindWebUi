@@ -1,8 +1,10 @@
-# BindWebUi
-bind web user interface
-develop by python3.10
+# pcawui
+pcawui is Private Certificate Authority Web User Interface.
+Development by Go.
 
 # Setup
 ```
-$ pip install flask
+$ go mod download
+$ go build
+$ ./pcawui server start
 ```
