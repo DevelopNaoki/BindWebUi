@@ -7,8 +7,8 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:   "manahy",
-	Short: "manahy is management tool on Hyper-V",
+	Use:   "pcawui",
+	Short: "pcaui is private certificate authority web user interface",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("need valid command")
 	},

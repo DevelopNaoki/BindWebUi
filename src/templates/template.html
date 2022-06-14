@@ -3,11 +3,11 @@
 <head lang="ja">
   <meta charset="UTF-8">
   <!--Import Google Icon Font-->
-  <title>{{ title }}</title>
+  <title>Private Certificate Authority</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Import Css -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/language.css') }}">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/language.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
@@ -18,7 +18,7 @@
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">&nbsp;&nbsp;Certificate Authority</a>
+        <a href="/" class="brand-logo">&nbsp;&nbsp;Private Certificate Authority</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/serverConfig">Configure Server</a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Server Certificates<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -49,12 +49,8 @@
     </nav>
 -->
   </header>
-
-    {% block content %}
-
-    {% endblock %}
   
-  <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/language.js') }}"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/language.js"></script>
 </body>
 </html>
