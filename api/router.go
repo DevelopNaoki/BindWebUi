@@ -1,6 +1,7 @@
 package api
 
 import (
+	"net/http"
 	"fmt"
 	"os"
 
@@ -12,4 +13,8 @@ func Router(engine *gin.Engine) {
 	fmt.Print(p)
 	engine.Static("/css", "src/css")
 	engine.Static("/js", "src/js")
+
+	engine.GET("/login", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "login.html", gin.H{})
+	})
 }
