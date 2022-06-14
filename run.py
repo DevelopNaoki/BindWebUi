@@ -1,14 +1,19 @@
 from flask import Flask
-from router import *
+import json
+from routes import app
+from datetime import timedelta
 
 webApp = Flask(__name__)
-
 webApp.register_blueprint(app)
 webApp.secret_key = 'thisiscertificateauthority'
 webApp.permanent_session_lifetime = timedelta(minutes=3)
 
+def serverConfig():
+  json_open = open('server.conf', 'r')
+  json_load = json.load(json_open)
+  return json_load['server']
+
 if __name__ == '__main__':
-    from init import serverConfig
     serverConfig = serverConfig()
 
     if 'debug' in serverConfig and (serverConfig['debug'].upper() == "TRUE"):
@@ -25,3 +30,6 @@ if __name__ == '__main__':
       webApp.run(host=serverConfig['listem'],port=serverConfig['port'],ssl_context=sslContext)
     else:
       webApp.run(host=serverConfig['listem'],port=serverConfig['port'])
+
+
+

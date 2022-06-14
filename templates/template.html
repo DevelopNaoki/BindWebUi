@@ -13,6 +13,21 @@
 <body>
   <header>
     <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Show</a></li>
+      <li><a href="#!">Issue</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">&nbsp;&nbsp;Certificate Authority</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/serverConfig">Configure Server</a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Server Certificates<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="/api/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+<!--
+    <ul id="dropdown1" class="dropdown-content">
 {% if session["user"] == "administrator" %}
       <li><a href="#!">Show</a></li>
 {% endif %}
@@ -32,6 +47,7 @@
 {% endif %}
       </div>
     </nav>
+-->
   </header>
 
     {% block content %}

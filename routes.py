@@ -1,6 +1,4 @@
-from flask import Flask, url_for, redirect, render_template, request, session
-from flask import Blueprint
-from datetime import timedelta
+from flask import Flask, url_for, redirect, render_template, request, session, Blueprint
 
 app = Blueprint('app', __name__)
 
@@ -35,23 +33,10 @@ def loginApi():
         return redirect('/dashboard')
     else:
         if "username" in request.form and "password" in request.form:
-            import MySQLdb
-            connection = MySQLdb.connect(
-                host='192.168.0.251',
-                user='root',
-                passwd='root',
-                db='certificateAuthority')
-            cursor = connection.cursor()
-
-            sql = ('''SELECT id FROM users WHERE userName=%s AND pass=%s''')
-            param = (str(request.form["username"]), str(request.form["password"]))
-            cursor.execute(sql, param)
-
-            if len(cursor.fetchall()) == 1:
+            from ..module import SearchUser
+            find = SearchUser(request.form["username"], request.form["password"])
+            if find:
                 session["user"] = format(str(request.form["username"]))
-
-            connection.commit()
-            connection.close()
 
             return redirect('/')
         else:
