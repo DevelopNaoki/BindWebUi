@@ -7,7 +7,7 @@ type User struct {
     Password string
 }
 
-type Role steuct {
+type Role struct {
     Id int
     Uuid string
     Role string
