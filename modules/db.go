@@ -15,3 +15,14 @@ func Hashization(text string) (hashText string) {
   hashText, _ = bcrypt.GenerateFromPassword([]byte(text),12)
   return hashText
 }
+
+func HashComparison(text string, hashText string) (agreement bool) {
+  err:=bcrypt.CompareHashAndPassword([]byte(hashText), []byte(text))
+  if err != nil {
+     agreement = false
+  } else {
+    agreement = true
+  }
+  return agreement
+}
+
