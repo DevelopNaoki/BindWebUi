@@ -23,3 +23,17 @@ type UserRole struct {
     UserUuid string
     RoleUuid string
 }
+
+type ServerConfig struct {
+    Port int
+    SSL bool
+    ServerCertificate string
+    PrivateKey string
+}
+
+type DBConfig struct {
+    MySQLServer string
+    Database string
+    Username string
+    Password string
+}
