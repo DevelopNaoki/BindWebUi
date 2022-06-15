@@ -17,7 +17,7 @@ func Hashization(text string) (hashText string) {
 }
 
 func HashComparison(hashText string, text string) (agreement bool) {
-  err:=bcrypt.CompareHashAndPassword([]byte(hashText), []byte(text))
+  err := bcrypt.CompareHashAndPassword([]byte(hashText), []byte(text))
   if err != nil {
      agreement = false
   } else {
