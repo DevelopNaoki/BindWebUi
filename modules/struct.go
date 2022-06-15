@@ -1,20 +1,25 @@
 package modules
 
+import (
+    "github.com/jinzhu/gorm"
+    _ "github.com/jinzhu/gorm/dialects/mysql"
+)
+    
 type User struct {
-    Id int
+    gorm.Model
     Uuid string
     Username string
     Password string
 }
 
 type Role struct {
-    Id int
+    gorm.Model
     Uuid string
     Role string
 }
 
 type UserRole struct {
-    Id int
+    gorm.Model
     UserUuid string
     RoleUuid string
 }
