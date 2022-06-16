@@ -8,6 +8,7 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/spf13/cobra v1.4.0
 	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97
+	gopkg.in/go-ini/ini.v1 v1.66.6
 )
 
 require (

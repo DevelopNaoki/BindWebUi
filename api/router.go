@@ -17,4 +17,7 @@ func Router(engine *gin.Engine) {
 	engine.GET("/login", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "login.html", gin.H{})
 	})
+        engine.GET("/register", func(c *gin.Context) {
+                c.HTML(http.StatusOK, "register.html", gin.H{})
+        })
 }
