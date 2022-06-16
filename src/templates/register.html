@@ -4,7 +4,7 @@
   <h3 >Login</h3>
   </div>
   <div class="row center">
-    <form class="col s12" action="/api/login" method="post" name="login">
+    <form class="col s12" action="/api/login" method="post" name="register">
       <div class="row">
         <div class="input-field col s12">
           <input id="username" type="text" name="username" class="validate" required>
@@ -17,10 +17,24 @@
           <label for="password">Password</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="again-password" type="password" name="again-password" class="validate" required onChange="check();">
+          <label for="again-password">Please Try Again Password</label>
+        </div>
+      </div>
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
       </button>
     </form>
   </div>
+
+  <script>
+    fonction Check(register) {
+      if register.password.value == register.again-password.value {
+        
+      }
+    }
+  </script>
 
 {{template "footer"}}
