@@ -31,7 +31,7 @@ func GetDBConfig() (dbConfig DBConfig) {
   dbConfig.Username    = cfg.Section("db").Key("username").String()
   dbConfig.Password    = cfg.Section("db").Key("password").String()
 
-  return serverConfig
+  return dbConfig
 }
 
 func FileExist (filename string) (exist bool) {
