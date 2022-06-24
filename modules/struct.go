@@ -25,7 +25,7 @@ type UserRole struct {
 }
 
 type ServerConfig struct {
-    Port int
+    Port string
     SSL bool
     ServerCertificate string
     PrivateKey string
