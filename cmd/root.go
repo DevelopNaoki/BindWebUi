@@ -18,6 +18,7 @@ func init() {
 	cobra.OnInitialize()
 	RootCmd.AddCommand(
 		serverCmd,
+		testPkg,
 	)
 	serverCmd.AddCommand(
 		startCmd,
