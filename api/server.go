@@ -7,14 +7,14 @@ import (
 )
 
 func Start() {
-	serverConfig := modules.GetServerConfig()
+	serverConfig := modules.FetchServerConfig()
 
 	engine := gin.Default()
 	engine.LoadHTMLGlob("src/templates/*.html")
 
 	Router(engine)
 
-	if serverConfig.SSL {
+	if serverConfig.SSLEnabled {
 		engin.RunTLS(":"+serverConfig.Port, serverConfig.ServerCertificate, serverConfig.PrivateKey)
 	} else {
 		engine.Run(":"+serverConfig.Port)
