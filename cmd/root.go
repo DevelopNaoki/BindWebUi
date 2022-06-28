@@ -20,6 +20,6 @@ func init() {
 		serverCmd,
 	)
 	serverCmd.AddCommand(
-		startCmd,
+		serverStartCmd,
 	)
 }
