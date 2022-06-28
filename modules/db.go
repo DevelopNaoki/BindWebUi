@@ -5,19 +5,19 @@ import (
   "golang.org/x/crypto/bcrypt"
 )
 
-func GenerateUUID() (newUuid string) {
-  newUuidObject, _ := uuid.NewUUID()
-  newUuid = newUuidObject.String()
-  return newUuid
+func GenerateUUID() (new_uuid string) {
+  new_uuid_object, _ := uuid.NewUUID()
+  new_uuid = new_uuid_object.String()
+  return new_uuid
 }
 
-func Hashization(text string) (hashText string) {
-  hashText, _ = bcrypt.GenerateFromPassword([]byte(text),12)
-  return hashText
+func Hashization(plain_text string) (hash_text string) {
+  hash_text, _ = bcrypt.GenerateFromPassword([]byte(plain_text),12)
+  return hash_text
 }
 
-func HashComparison(hashText string, text string) (agreement bool) {
-  err := bcrypt.CompareHashAndPassword([]byte(hashText), []byte(text))
+func HashComparison(hash_text string, plain_text string) (agreement bool) {
+  err := bcrypt.CompareHashAndPassword([]byte(hash_text), []byte(plain_text))
   if err != nil {
      agreement = false
   } else {
