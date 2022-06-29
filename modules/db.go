@@ -11,13 +11,13 @@ func GenerateUUID() (newUuid string) {
   return newUuid
 }
 
-func Hashization(text string) (hashText string) {
-  hashText, _ = bcrypt.GenerateFromPassword([]byte(text),12)
+func Hashization(plainText string) (hashText string) {
+  hashText, _ = bcrypt.GenerateFromPassword([]byte(plainText),12)
   return hashText
 }
 
-func HashComparison(hashText string, text string) (agreement bool) {
-  err := bcrypt.CompareHashAndPassword([]byte(hashText), []byte(text))
+func HashComparison(hashText string, plainText string) (agreement bool) {
+  err := bcrypt.CompareHashAndPassword([]byte(hashText), []byte(plainText))
   if err != nil {
      agreement = false
   } else {

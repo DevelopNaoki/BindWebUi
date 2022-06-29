@@ -9,8 +9,8 @@ import (
 )
 
 func Router(engine *gin.Engine) {
-	p, _ := os.Getwd()
-	fmt.Print(p)
+	wd, _ := os.Getwd()
+	fmt.Print(wd)
 	engine.Static("/css", "src/css")
 	engine.Static("/js", "src/js")
 

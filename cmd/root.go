@@ -21,6 +21,6 @@ func init() {
 		testPkg,
 	)
 	serverCmd.AddCommand(
-		startCmd,
+		serverStartCmd,
 	)
 }

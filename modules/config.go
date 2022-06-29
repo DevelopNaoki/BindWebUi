@@ -6,21 +6,21 @@ import (
   "gopkg.in/go-ini/ini.v1"
 )
 
-func GetServerConfig() (serverConfig ServerConfig) {
+func FetchServerConfig() (serverConfig ServerConfig) {
   cfg, err := ini.Load("server.conf")
   if err != nil {
     os.Exit(-1)
   }
 
   serverConfig.Port              = cfg.Section("server").Key("port").MustInt(8080)
-  serverConfig.SSL               = cfg.Section("server").Key("SSL").MustBool(false)
+  serverConfig.SSLEnabled        = cfg.Section("server").Key("SSL").MustBool(false)
   serverConfig.ServerCertificate = cfg.Section("server").Key("server_certificate").String()
   serverConfig.PrivateKey        = cfg.Section("server").Key("private_key").String()
 
   return serverConfig
 }
 
-func GetDBConfig() (dbConfig DBConfig) {
+func FetchDBConfig() (dbConfig DBConfig) {
   cfg, err := ini.Load("server.conf")
   if err != nil {
     os.Exit(-1)
