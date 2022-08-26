@@ -11,7 +11,7 @@ func GetServerConfig() (serverConfig ServerConfig) {
   if err != nil {
     os.Exit(-1)
   }
-
+  
   serverConfig.Port              = cfg.Section("server").Key("port").MustInt(8080)
   serverConfig.SSL               = cfg.Section("server").Key("SSL").MustBool(false)
   serverConfig.ServerCertificate = cfg.Section("server").Key("server_certificate").String()
