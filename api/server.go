@@ -6,7 +6,7 @@ import (
 	"github.com/DevelopNaoki/pcawui/modules"
 )
 
-func Start() {
+func Run() {
 	serverConfig := modules.GetServerConfig()
 
 	engine := gin.Default()
