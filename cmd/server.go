@@ -15,8 +15,8 @@ var serverCmd = &cobra.Command{
 	},
 }
 
-var RunCmd = &cobra.Command{
-        Use:   "start",
+var runCmd = &cobra.Command{
+        Use:   "run",
         Short: "pcawui server run",
         RunE: func(cmd *cobra.Command, args []string) error {
 		api.Run()
