@@ -15,11 +15,11 @@ var serverCmd = &cobra.Command{
 	},
 }
 
-var startCmd = &cobra.Command{
+var RunCmd = &cobra.Command{
         Use:   "start",
-        Short: "pcawui server start",
+        Short: "pcawui server run",
         RunE: func(cmd *cobra.Command, args []string) error {
-		api.Start()
+		api.Run()
                 return nil
         },
 }
