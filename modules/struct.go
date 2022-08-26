@@ -37,13 +37,3 @@ type DBConfig struct {
     Username string
     Password string
 }
-
-func NewServerConfig() ServerConfig {
-    var s ServerConfig
-    s.Port = 8080
-    s.SSL = false
-    ServerCertificate = ""
-    PrivateKey = ""
-    
-    return s
-}
