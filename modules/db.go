@@ -13,7 +13,7 @@ func GenerateUUID() (newUuid string) {
 
 func Hashization(text string) (hashText string) {
   hashText, _ = bcrypt.GenerateFromPassword([]byte(text),12)
-  return hashText
+  return string(hashText)
 }
 
 func HashComparison(hashText string, text string) (agreement bool) {
